@@ -41,7 +41,7 @@ public interface DtoTestHelper<DTO extends BaseDto> {
 	DTO invalidateDto(DTO dto);
 
 	/**
-	 * Allows subclasses to modify one DTO for testing {@code update()} method.
+	 * Modifies one DTO for testing {@code update()} method.
 	 * 
 	 * @param dto DTO to be updated.
 	 * @returns The modified DTO.
