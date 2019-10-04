@@ -1,5 +1,7 @@
 package org.giste.util.service.exception;
 
+import lombok.Getter;
+
 /**
  * Exception thrown when a single entity is looked up by an unique property and
  * it's not found.
@@ -14,16 +16,19 @@ public class EntityNotFoundException extends RuntimeException {
 	/**
 	 * The name of the entity looked up.
 	 */
+	@Getter
 	private final String entity;
 
 	/**
 	 * The property used to look up the entity.
 	 */
+	@Getter
 	private final String property;
 
 	/**
 	 * The value used to look up the entity.
 	 */
+	@Getter
 	private final Object value;
 
 	/**
@@ -53,18 +58,6 @@ public class EntityNotFoundException extends RuntimeException {
 		this.entity = entity;
 		this.property = property;
 		this.value = id;
-	}
-
-	public String getEntity() {
-		return entity;
-	}
-
-	public String getProperty() {
-		return property;
-	}
-
-	public Object getValue() {
-		return value;
 	}
 
 }

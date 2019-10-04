@@ -8,4 +8,16 @@
 	<name>giste-java-util</name>
 	<description>Common utilities for Java projects.</description>
 
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
 </project>
