@@ -11,13 +11,7 @@ import lombok.Getter;
 public class EntityNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = 629573734793213907L;
-	private static final String MESSAGE = "The entity %s with property %s = %s can't be found";
-
-	/**
-	 * The name of the entity looked up.
-	 */
-	@Getter
-	private final String entity;
+	private static final String MESSAGE = "The entity with property %s = %s can't be found";
 
 	/**
 	 * The property used to look up the entity.
@@ -39,9 +33,8 @@ public class EntityNotFoundException extends RuntimeException {
 	 * @param id       The value of the property used to look up the entity.
 	 * @param message  Message for this exception.
 	 */
-	public EntityNotFoundException(String entity, String property, Object id, String message) {
+	public EntityNotFoundException(String property, Object id, String message) {
 		super(message);
-		this.entity = entity;
 		this.property = property;
 		this.value = id;
 	}
@@ -53,11 +46,8 @@ public class EntityNotFoundException extends RuntimeException {
 	 * @param property The property name used to look up the entity.
 	 * @param id       The value of the property used to look up the entity.
 	 */
-	public EntityNotFoundException(String entity, String property, Object id) {
-		super(String.format(MESSAGE, entity, property, id));
-		this.entity = entity;
-		this.property = property;
-		this.value = id;
+	public EntityNotFoundException(String property, Object id) {
+		this(property, id, String.format(MESSAGE, property, id));
 	}
 
 }
